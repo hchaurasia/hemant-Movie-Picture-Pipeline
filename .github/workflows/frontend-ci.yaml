@@ -6,6 +6,10 @@ on:
       - main
   workflow_dispatch:
 
+defaults:
+  run:
+    working-directory: starter/frontend
+
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -16,9 +20,7 @@ jobs:
           node-version: 18
           cache: 'npm'
       - run: npm ci
-        working-directory: starter/frontend
       - run: npm run lint
-        working-directory: starter/frontend
 
   test:
     runs-on: ubuntu-latest
@@ -29,10 +31,7 @@ jobs:
           node-version: 18
           cache: 'npm'
       - run: npm ci
-        working-directory: starter/frontend
-      - run: npm run test
-        working-directory: starter/frontend
-      
+      - run: npm run test     
 
   build:
     needs: 
@@ -42,17 +41,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        working-directory: starter/frontend
         with:
           node-version: 18
           cache: 'npm'
       - run: npm ci
-        working-directory: starter/frontend
       - run: npm run test
-        working-directory: starter/frontend
 
       - name: Build Docker Image
-        working-directory: starter/frontend
         run: |
           docker build -t frontend-ci:latest .
         
