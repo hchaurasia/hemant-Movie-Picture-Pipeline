@@ -12,6 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
+        working-directory: starter/backend
         with:
           python-version: 3.10
           cache: 'pipenv'
