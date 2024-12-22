@@ -16,7 +16,9 @@ jobs:
           node-version: 18
           cache: 'npm'
       - run: npm ci
+        working-directory: starter/frontend
       - run: npm run lint
+        working-directory: starter/frontend
 
   test:
     runs-on: ubuntu-latest
@@ -27,7 +29,9 @@ jobs:
           node-version: 18
           cache: 'npm'
       - run: npm ci
+        working-directory: starter/frontend
       - run: npm run test
+        working-directory: starter/frontend
       
 
   build:
@@ -42,9 +46,12 @@ jobs:
           node-version: 18
           cache: 'npm'
       - run: npm ci
+        working-directory: starter/frontend
       - run: npm run test
+        working-directory: starter/frontend
 
       - name: Build Docker Image
+        working-directory: starter/frontend
         run: |
           docker build -t frontend-ci:latest .
         

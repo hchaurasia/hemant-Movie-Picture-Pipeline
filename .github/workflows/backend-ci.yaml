@@ -15,19 +15,27 @@ jobs:
         with:
           python-version: 3.10
           cache: 'pipenv'
+      - name: Install pipenv
+        run: curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python
       - run: pipenv install
+        working-directory: starter/backend
       - run: pipenv run lint
+        working-directory: starter/backend
 
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: 3.10
           cache: 'pipenv'
+      - name: Install pipenv
+        run: curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python
       - run: pipenv install
+        working-directory: starter/backend
       - run: pipenv run test
+        working-directory: starter/backend
       
 
   build:
@@ -37,14 +45,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: 3.10
           cache: 'pipenv'
+      - name: Install pipenv
+        run: curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python
       - run: pipenv install
+        working-directory: starter/backend
       - run: pipenv run test
+        working-directory: starter/backend
 
       - name: Build Docker Image
-        - name: Build Docker Image
+        working-directory: starter/backend
         run: |
           docker build -t backend-ci:latest .
+       
