@@ -15,16 +15,17 @@ defaults:
 jobs:
   lint:
     runs-on: ubuntu-latest
-    working-directory: ./starter/frontend
+    #working-directory: ./starter/frontend
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: 'npm'
-      - run: npm ci
-
-      - run: npm run lint
+      - run: |
+          cd ./starter/frontend
+          npm ci
+          npm run lint
 
   test:
     runs-on: ubuntu-latest
