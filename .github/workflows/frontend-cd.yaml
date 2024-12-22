@@ -1,5 +1,0 @@
-- name: Build Docker Image
-        run: |
-          docker build --build-arg REACT_APP_MOVIE_API_URL=${REACT_APP_MOVIE_API_URL} -t mp-frontend:latest .
-        env:
-          REACT_APP_MOVIE_API_URL: ${{ secrets.REACT_APP_MOVIE_API_URL }}
