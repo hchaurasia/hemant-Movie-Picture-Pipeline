@@ -8,9 +8,6 @@ on:
       - main
   workflow_dispatch:
 
-defaults:
-  run:
-    working-directory: ./starter/frontend
 
 jobs:
   lint:
@@ -29,7 +26,7 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-    working-directory: ./starter/frontend
+    #working-directory: ./starter/frontend
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
