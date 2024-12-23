@@ -2,55 +2,88 @@ name: Frontend CI
 
 on:
   push:
-    paths:
-      - './starter/frontend/**'
     branches:
-      - main
+      - utibe
+    paths:
+      - 'starter/frontend/**'
   workflow_dispatch:
 
+# for correct workflow, this should work this way on the main repo:
+  # on `pull_requests` against the `main` branch,only when code in the frontend application changes 
+  # and can run manually
+  # on:
+  #   pull_request:
+  #     branches:
+  #       - main
+  #     paths:
+  #       - 'starter/frontend/**'
+  #   workflow_dispatch:
+    
 
 jobs:
   lint:
+    name: Lint
     runs-on: ubuntu-latest
-    #working-directory: ./starter/frontend
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 18
-          cache: 'npm'
-      - run: |
-          cd ./starter/frontend
-          npm ci
-          npm run lint
+          node-version: 'lts/*'
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: starter/frontend
+
+      - name: Run lint
+        run: npm run lint
+        working-directory: starter/frontend
 
   test:
+    name: Test
     runs-on: ubuntu-latest
-    #working-directory: ./starter/frontend
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 18
-          cache: 'npm'
-      - run: npm ci
-      - run: npm run test     
+          node-version: 'lts/*'
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: starter/frontend
+
+      - name: Run tests
+        run: CI=true npm test
+        working-directory: starter/frontend
 
   build:
+    name: Build
+    runs-on: ubuntu-latest
     needs: 
       - lint
       - test
-    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18
-          cache: 'npm'
-      - run: npm ci
-      - run: npm run test
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - name: Build Docker Image
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: starter/frontend
+
+      - name: Build Docker image
         run: |
-          docker build -t frontend-ci:latest .
-        
+          docker build \
+            --build-arg REACT_APP_MOVIE_API_URL=http://localhost:5000 \
+            --tag=mp-frontend:latest \
+            .
+        working-directory: starter/frontend
