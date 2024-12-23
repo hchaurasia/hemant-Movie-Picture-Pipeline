@@ -8,7 +8,7 @@ on:
       - 'starter/frontend/**'
   workflow_dispatch:
 
-# for correct workflow, this should work this way on the main repo:
+# for correct workflow as required, this should work this way on the main repo:
   # on `pull_requests` against the `main` branch,only when code in the frontend application changes 
   # and can run manually
   # on:
@@ -18,7 +18,6 @@ on:
   #     paths:
   #       - 'starter/frontend/**'
   #   workflow_dispatch:
-    
 
 jobs:
   lint:
