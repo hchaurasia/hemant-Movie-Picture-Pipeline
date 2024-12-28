@@ -95,7 +95,7 @@ jobs:
       - name: Build Docker image
         run: |
           docker build \
-            --build-arg REACT_APP_MOVIE_API_URL=${{ secrets.BACKEND_URL }}/movies \
+            --build-arg REACT_APP_MOVIE_API_URL=${{ secrets.BACKEND_URL }} \
             --tag mp-frontend:latest \
             .
         working-directory: starter/frontend
