@@ -469,9 +469,9 @@ kustomize build | kubectl apply -f -
 
 ### Frontend and Backend service URLs
 
-- Frontend service URL: http://a14159aa7a7f644fcb6d348e9695e8ab-137097099.us-east-1.elb.amazonaws.com
+- Frontend service URL: http://ad46192781c7b41bd931ec5133217cfd-1099298934.us-east-1.elb.amazonaws.com
 
-- Backend service URL: http://a6f03b26d35fd4d088bf33036d4bbe00-1851088417.us-east-1.elb.amazonaws.com
+- Backend service URL: http://a840b4b5564e34046a52be306be469c9-682094994.us-east-1.elb.amazonaws.com
 ## License
 
 [License](LICENSE.md)
