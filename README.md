@@ -9,7 +9,7 @@ The team's project is comprised of 2 applications.
 
 You'll find 2 folders, one named `frontend` and one named `backend`, where each application's source code is maintained. Your job is to use the team's [existing documentation](#frontend-development-notes) and create CI/CD pipelines to meet the teams' needs.
 
-## Deliverables
+###  Deliverables
 
 ### Frontend
 
