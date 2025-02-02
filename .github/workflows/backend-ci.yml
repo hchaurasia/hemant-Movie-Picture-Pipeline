@@ -1,13 +1,12 @@
 name: Backend Continuous Integration
 
 on:
-  workflow_dispatch:
   pull_request:
-#  push:
-#    branches:
-#      - main
-#    paths:
-#      - 'starter/backend/**'
+    branches:
+      - main
+    paths:
+      - 'starter/frontend/**'
+  workflow_dispatch:
 
 env:
   PYTHON-VERSION: "3.10"
