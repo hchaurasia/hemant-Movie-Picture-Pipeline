@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      -'starter/frontend/**'
+      - 'starter/frontend/**'
 
 env:
   NODE-VERSION: 18.14
