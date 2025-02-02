@@ -1,6 +1,6 @@
 # Movie Picture Pipeline
 
-You've been brought on as the DevOps resource for a development team that manages a web application that is a catalog of Movie Picture movies. They're in dire need of automating their development workflows in hopes of accelerating their release cycle. They'd like to use Github Actions to automate testing, building and deploying their applications to an existing Kubernetes cluster.
+You've been brought on as the DevOps resource for a development team that manages a web application that is a catalog of Movie Picture movies. They're in dire need of automating their development workflows in hopes of accelerating their release cycle. They'd like to use Github Actions to automate testing, building & deploying their applications to an existing Kubernetes cluster.
 
 The team's project is comprised of 2 applications.
 
@@ -19,30 +19,30 @@ There are two folders(Backend and Frontend) under starter having Application cod
      - All tests are passed
      - Pipeline is executing automatically on pull_request
      - Pipeline is executing manually as well without any error
-     - No output failures, screenshpts are attached
+     - No output failures, screenshots are attached
 
 3. A Continuous Deployment workflow for Frontend Application
      - Lint and Test Jobs are running parallelly.
      - All tests are passed
      - Pipeline is executing automatically on every push 
      - Pipeline is executing manually as well without any error
-     - No output failures, screenshpts are attached
+     - No output failures, screenshots are attached
 
 ### Backend
 
 1. A Continuous Integration workflow backend Application.
-     a. Lint and Test Jobs are running parallelly.
-     b. All tests are passed
-     c. Pipeline is executing automatically on pull_request
-     d. Pipeline is executing manually as well without any error
-     e. No output failures, screenshpts are attached
+     - Lint and Test Jobs are running parallelly.
+     - All tests are passed
+     - Pipeline is executing automatically on pull_request
+     - Pipeline is executing manually as well without any error
+     -  No output failures, screenshots are attached
 
 3. A Continuous Deployment workflow for backend Application
-     a. Lint and Test Jobs are running parallelly.
-     b. All tests are passed
-     c. Pipeline is executing automatically on every push 
-     d. Pipeline is executing manually as well without any error
-     e. No output failures, screenshpts are attached
+     - Lint and Test Jobs are running parallelly.
+     - All tests are passed
+     - Pipeline is executing automatically on every push 
+     - Pipeline is executing manually as well without any error
+     - No output failures, screenshots are attached
    
 ### Frontend and Backend service URLs from K8s Cluster
 
@@ -50,15 +50,18 @@ There are two folders(Backend and Frontend) under starter having Application cod
 
 - Backend service URL: http://aaa5bd9a860964dbf8b8a99835e4528e-1367412076.us-east-1.elb.amazonaws.com
 
-### K8s commands output for cluster
+### Few K8s commands output for cluster
 
 1. kubectl cluster-info
      - Kubernetes control plane is running at https://329BC3EE9BFA96332D4E25C2D1F2C86A.gr7.us-east-1.eks.amazonaws.com
      - CoreDNS is running at https://329BC3EE9BFA96332D4E25C2D1F2C86A.gr7.us-east-1.eks.amazonaws.com/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 2. kubectl get svc
     - backend ->  aaa5bd9a860964dbf8b8a99835e4528e-1367412076.us-east-1.elb.amazonaws.com 
-    - frontend    a0ccdf2c1f2e74fe4af7ba625f288e79-2130058383.us-east-1.elb.amazonaws.com  
- 
+    - frontend    a0ccdf2c1f2e74fe4af7ba625f288e79-2130058383.us-east-1.elb.amazonaws.com
+3. kubectl get nodes
+   - NAME                         STATUS   ROLES    AGE   VERSION
+     ip-10-0-1-236.ec2.internal   Ready    <none>   70m   v1.25.16-eks-59bf375
+
 
  
 
