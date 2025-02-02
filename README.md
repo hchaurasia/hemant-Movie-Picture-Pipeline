@@ -15,18 +15,18 @@ There are two folders(Backend and Frontend) under starter having Application cod
 ### Frontend
 
 1. A Continuous Integration workflow Frontend Application.
-     a. Lint and Test Jobs are running parallelly.
-     b. All tests are passed
-     c. Pipeline is executing automatically on pull_request
-     d. Pipeline is executing manually as well without any error
-     e. No output failures, screenshpts are attached
+     - Lint and Test Jobs are running parallelly.
+     - All tests are passed
+     - Pipeline is executing automatically on pull_request
+     - Pipeline is executing manually as well without any error
+     - No output failures, screenshpts are attached
 
 3. A Continuous Deployment workflow for Frontend Application
-     a. Lint and Test Jobs are running parallelly.
-     b. All tests are passed
-     c. Pipeline is executing automatically on every push 
-     d. Pipeline is executing manually as well without any error
-     e. No output failures, screenshpts are attached
+     - Lint and Test Jobs are running parallelly.
+     - All tests are passed
+     - Pipeline is executing automatically on every push 
+     - Pipeline is executing manually as well without any error
+     - No output failures, screenshpts are attached
 
 ### Backend
 
