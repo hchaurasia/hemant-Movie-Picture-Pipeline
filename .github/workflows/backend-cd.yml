@@ -10,7 +10,6 @@ on:
 
 env:
   PYTHON-VERSION: "3.10"
-  REACT_APP_MOVIE_API_URL: "http://a9f1bfcd94c1045c78977a914efd0998-129839935.us-east-1.elb.amazonaws.com/"
   BACKEND_ECR: 057999383966.dkr.ecr.us-east-1.amazonaws.com
   
 jobs:
