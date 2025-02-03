@@ -11,7 +11,7 @@ on:
 env:
   NODE-VERSION: 18.14
   REACT_APP_MOVIE_API_URL: "http://a0ccdf2c1f2e74fe4af7ba625f288e79-2130058383.us-east-1.elb.amazonaws.com"
-  FRONTEND_ECR: 057999383966.dkr.ecr.us-east-1.amazonaws.com/frontend
+  FRONTEND_ECR: 057999383966.dkr.ecr.us-east-1.amazonaws.com
   
 jobs:
   lint:
