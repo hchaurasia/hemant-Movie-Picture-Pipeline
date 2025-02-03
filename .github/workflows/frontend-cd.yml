@@ -96,7 +96,7 @@ jobs:
         run: |
           docker build \
             --build-arg REACT_APP_MOVIE_API_URL=${{ secrets.BACKEND_URL }} \
-            --tag mp-frontend:latest \
+            --tag frontend:latest \
             .
         working-directory: starter/frontend
 
@@ -112,7 +112,7 @@ jobs:
 
       - name: Tag and Push Docker Image
         run: |
-          docker tag mp-frontend:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/frontend:${{ github.sha }}
+          docker tag frontend:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/frontend:${{ github.sha }}
           docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/frontend:${{ github.sha }}
 
   deploy:
