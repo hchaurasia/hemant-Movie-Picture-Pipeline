@@ -55,14 +55,7 @@ There are two folders(Backend and Frontend) under starter having Application cod
      - Kubernetes control plane is running at https://329BC3EE9BFA96332D4E25C2D1F2C86A.gr7.us-east-1.eks.amazonaws.com
      - CoreDNS is running at https://329BC3EE9BFA96332D4E25C2D1F2C86A.gr7.us-east-1.eks.amazonaws.com/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 2. kubectl get svc
-    - backend ->  aaa5bd9a860964dbf8b8a99835e4528e-1367412076.us-east-1.elb.amazonaws.com 
-    - frontend    a0ccdf2c1f2e74fe4af7ba625f288e79-2130058383.us-east-1.elb.amazonaws.com
-3. kubectl get nodes
-<<<<<<< HEAD
-     NAME -ip-10-0-1-236.ec2.internal   Ready    <none>   70m   v1.25.16-eks-59bf375
-=======
-   - ip-10-0-1-236.ec2.internal  
->>>>>>> 39d181f11e9d9a8d97fd1f3a5bcf4bcebcee1dab
+    - frontend    http://a3d0b9542030d445c9e55b4b47dea86c-1358803208.us-east-1.elb.amazonaws.com
 
 
  
